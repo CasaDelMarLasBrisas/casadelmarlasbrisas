@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+<h1>Casa del Mar Las Brisas</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="gallery.html">Photo Gallery</a>
+<a href="info.html">More Information</a>
+</nav>
+</header>
+
+<h2 style="text-align:center;margin-top:25px;">Photo Gallery</h2>
+
+<div class="viewer">
+<button onclick="prevPhoto()">&#10094;</button>
+<img id="mainPhoto" src="images/cdm_from_ocean.jpg" alt="Gallery Photo">
+<button onclick="nextPhoto()">&#10095;</button>
+</div>
+
+
+<div class="thumbs">
+<img src="images/cdm_from_ocean.jpg" onclick="showPhoto(1)">
+<img src="images/cdm_pool_beach.jpg" onclick="showPhoto(2)">
+<img src="images/cdm_pool_palm_ocean.jpg" onclick="showPhoto(3)">
+<img src="images/cdm_north_beach.jpg" onclick="showPhoto(4)">
+<img src="images/cdm_fishermen.jpg" onclick="showPhoto(5)">
+<img src="images/cdm_sunset_1.jpg" onclick="showPhoto(6)">
+<img src="images/cdm_sunset_2.jpg" onclick="showPhoto(7)">
+
+<img src="images/l_living_r_dining_r.jpg" onclick="showPhoto(8)">
+<img src="images/l_living_r(2).jpg" onclick="showPhoto(9)">
+<img src="images/l_kitchen.jpg" onclick="showPhoto(10)">
+<img src="images/l_master_b1.jpg" onclick="showPhoto(11)">
+<img src="images/l_master_b(2).jpg" onclick="showPhoto(12)">
+<img src="images/l_bedroom_3.png" onclick="showPhoto(13)">
+<img src="images/l_view_living_r.jpg" onclick="showPhoto(14)">
+
+<img src="images/u_living_r.jpg" onclick="showPhoto(15)">
+<img src="images/u_dining_r.jpg" onclick="showPhoto(16)">
+<img src="images/u_kitchen.jpg" onclick="showPhoto(17)">
+<img src="images/u_master_b(2).jpg" onclick="showPhoto(18)">
+<img src="images/u_bedroom_2(1).jpg" onclick="showPhoto(19)">
+<img src="images/u_bed_r_2(1).jpg" onclick="showPhoto(20)">
+<img src="images/u_view_terrace_mb.jpg" onclick="showPhoto(21)">
+</div>
+
+
+<script>
+
+const photos = [
+"images/cdm_from_ocean.jpg",
+"images/cdm_pool_beach.jpg",
+"images/cdm_pool_palm_ocean.jpg",
+"images/cdm_north_beach.jpg",
+"images/cdm_fishermen.jpg",
+"images/cdm_sunset_1.jpg",
+"images/cdm_sunset_2.jpg",
+
+"images/l_living_r_dining_r.jpg",
+"images/l_living_r(2).jpg",
+"images/l_kitchen.jpg",
+"images/l_master_b1.jpg",
+"images/l_master_b(2).jpg",
+"images/l_bedroom_3.png",
+"images/l_view_living_r.jpg",
+
+"images/u_living_r.jpg",
+"images/u_dining_r.jpg",
+"images/u_kitchen.jpg",
+"images/u_master_b(2).jpg",
+"images/u_bedroom_2(1).jpg",
+"images/u_bed_r_2(1).jpg",
+"images/u_view_terrace_mb.jpg"
+];
+
+let current = 1;
+const total = photos.length;
+
+function showPhoto(n){
+    current = n;
+    document.getElementById("mainPhoto").src = photos[n-1];
+}
+
+function nextPhoto(){
+    current = (current >= total) ? 1 : current + 1;
+    showPhoto(current);
+}
+
+function prevPhoto(){
+    current = (current <= 1) ? total : current - 1;
+    showPhoto(current);
+}
+
+</script>
+</body>
+</html>
