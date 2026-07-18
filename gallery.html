@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Photo Gallery</title>
+<title>Photo Gallery | Beachfront Rental in Manzanillo, Mexico | Casa del Mar Las Brisas</title>
+<meta name="description" content="Browse photos of Casa del Mar Las Brisas, a private beachfront vacation rental in Las Brisas, Manzanillo, Colima, Mexico. See the beach, pool, ocean views, bedrooms, kitchens and spectacular sunsets.">
 <link rel="stylesheet" href="style.css">
 
 <!-- Google tag (gtag.js) -->
@@ -28,7 +29,13 @@
 </nav>
 </header>
 
-<h2 style="text-align:center;margin-top:25px;">Photo Gallery</h2>
+<h2 style="text-align:center;margin-top:25px;">
+Photo Gallery – Beachfront Vacation Rental in Manzanillo, Mexico
+</h2>
+
+<p style="max-width:900px;margin:20px auto;text-align:center;">
+Browse photos of Casa del Mar Las Brisas, a private beachfront duplex in Las Brisas, Manzanillo, Colima, Mexico. Explore the pool, beach, ocean views, spacious bedrooms, fully equipped kitchens, comfortable living areas, and spectacular Pacific sunsets.
+</p>
 
 <div class="viewer">
 <button onclick="prevPhoto()">&#10094;</button>
@@ -64,6 +71,8 @@
 </div>
 
 
+
+
 <script>
 
 const photos = [
@@ -92,12 +101,42 @@ const photos = [
 "images/u_view_terrace_mb.jpg"
 ];
 
+const altText = [
+"Beachfront view of Casa del Mar Las Brisas in Manzanillo, Mexico",
+"Swimming pool overlooking the Pacific Ocean at Casa del Mar Las Brisas",
+"Pool and palm trees beside the Pacific Ocean",
+"Las Brisas Beach north of Casa del Mar",
+"Traditional fishermen on Las Brisas Beach",
+"Pacific sunset viewed from Casa del Mar Las Brisas",
+"Evening sunset over the Pacific Ocean",
+
+"Lower apartment living and dining room",
+"Lower apartment living room with ocean view",
+"Fully equipped kitchen in the lower apartment",
+"Master bedroom in the lower apartment",
+"Second bedroom in the lower apartment",
+"Third bedroom in the lower apartment",
+"Ocean view from the lower apartment",
+
+"Upper apartment living room",
+"Upper apartment dining room",
+"Fully equipped kitchen in the upper apartment",
+"Master bedroom in the upper apartment",
+"Second bedroom in the upper apartment",
+"Guest bedroom in the upper apartment",
+"Terrace view from the upper apartment overlooking the Pacific Ocean"
+];
+
 let current = 1;
 const total = photos.length;
 
 function showPhoto(n){
     current = n;
-    document.getElementById("mainPhoto").src = photos[n-1];
+
+    const img = document.getElementById("mainPhoto");
+
+    img.src = photos[n-1];
+    img.alt = altText[n-1];
 }
 
 function nextPhoto(){
